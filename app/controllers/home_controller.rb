@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
   def index
+    @index = [{file: "portfolio/item-1.jpg", title: "젬", content: "예측시장서비스"},
+              {file: "portfolio/item-2.jpg", title: "세렝게티", content: "개발자 커뮤니티"},
+              {file: "portfolio/item-3.jpg", title: "샤샤건건", content: "교내 포스터 갤러리"},
+              {file: "portfolio/item-4.jpg", title: "데스크", content: "뉴스 클리핑서비스"},
+              {file: "portfolio/item-5.jpg", title: "블록커스", content: "위치기반 SNS"},
+              {file: "portfolio/item-6.jpg", title: "운수좋은날", content: "운수 매칭 플랫폼"}]
   end
 
   def member
@@ -20,6 +26,9 @@ class HomeController < ApplicationController
   end
 
   def gallery
+    @gallerys = [{file: "hack-1.JPG", name: "해커톤1"},
+                 {file: "hack-2.JPG", name: "해커톤2"},
+                 {file: "hack-3.JPG", name: "해커톤3"}]
   end
 
   def contact

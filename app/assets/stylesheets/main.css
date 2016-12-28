@@ -356,9 +356,9 @@ figure .overlay:hover a {
   transform: scale3d(1, 1, 1);
 }
 figure .buttons {
-  position: absolute;
+  position: relative;
   top: 45%;
-  left: 24%;
+  /* left: 24%; */
 }
 figure figcaption {
   padding: 20px 25px;
@@ -989,7 +989,7 @@ article {
   padding: 100px;
 }
 .gallery figure .buttons {
-  left: 40%;
+  /* left: 40%; */
 }
 .portfolio-meta span {
   margin: 5px 10px;

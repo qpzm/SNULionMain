@@ -28,7 +28,19 @@ class HomeController < ApplicationController
   def gallery
     @gallerys = [{file: "hack-1.JPG", name: "해커톤1"},
                  {file: "hack-2.JPG", name: "해커톤2"},
-                 {file: "hack-3.JPG", name: "해커톤3"}]
+                 {file: "hack-3.JPG", name: "해커톤3"},
+                 {file: "seminar-1.JPG", name: "세미나1"},
+                 {file: "seminar-2.JPG", name: "세미나2"},
+                 {file: "seminar-3.JPG", name: "세미나3"},
+                 {file: "mt-1.JPG", name: "엠티1"},
+                 {file: "mt-2.JPG", name: "엠티2"},
+                 {file: "mt-3.JPG", name: "엠티3"},
+                 {file: "birthday-1.JPG", name: "생일파티1"},
+                 {file: "birthday-2.JPG", name: "생일파티2"},
+                 {file: "party-1.JPG", name: "뒷풀이1"},
+                 {file: "party-2.JPG", name: "뒷풀이2"},
+                 {file: "escape-1.JPG", name: "방탈출1"},
+                 {file: "escape-2.JPG", name: "방탈출2"}]
   end
 
   def contact

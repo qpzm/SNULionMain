@@ -10,7 +10,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -34,9 +34,9 @@
         <!-- /responsive nav button -->
 
         <!-- logo -->
-        <div class="navbar-brand">
-          <a href="/" >
-            <%= image_tag "logo.png" %>
+        <div class="navbar-brand" style="padding: 0;">
+          <a href="/" style="margin: 0; padding: 0;">
+            <%= image_tag "snulion_logo_wide2.png", size: "173x49" %>
           </a>
         </div>
         <!-- /logo -->

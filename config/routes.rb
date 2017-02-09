@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'lecture/lecture'
+
   root 'home#index'
   get '/member' => 'home#member'
   get '/gallery' => 'home#gallery'

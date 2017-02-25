@@ -48,17 +48,19 @@
           <li><a href="/" >Home</a></li>
           <li><a href="/member">Member</a></li>
           <li><a href="/gallery">Gallery</a></li>
-          <% if user_signed_in? or admin_signed_in? %>
-            <li><a href="/money/money_check">Money</a></li>
-            <li><a href="/lecture/lecture">Lecture</a></li>
-          <% end %>
-          <% if user_signed_in? %>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% elsif admin_signed_in? %>
-            <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Admin", new_admin_session_path %></li>
+          <% if false %> <!-- 로그인은 나중에하자. -->
+            <% if user_signed_in? or admin_signed_in? %>
+              <li><a href="/money/money_check">Money</a></li>
+              <li><a href="/lecture/lecture">Lecture</a></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% elsif admin_signed_in? %>
+              <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "Admin", new_admin_session_path %></li>
+            <% end %>
           <% end %>
         </ul>
       </div>
@@ -74,31 +76,15 @@
     <footer id="footer">
       <div class="container">
         <div class="col-md-8">
-          <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="http://www.Themefisher.com">Themefisher</a></p>
+          <p class="copyright">Copyright: <span>2017</span> 멋쟁이 사자처럼 </p>
         </div>
         <div class="col-md-4">
           <!-- Social Media -->
           <ul class="social">
             <li>
-            <a href="http://wwww.fb.com/themefisher" class="Facebook">
+            <a href="https://www.facebook.com/likelionatSNU" class="Facebook">
               <i class="ion-social-facebook"></i>
             </a>
-            </li>
-            <li>
-            <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-              <i class="ion-social-twitter"></i>
-            </a>
-            </li>
-            <li>
-            <a href="#" class="Linkedin">
-              <i class="ion-social-linkedin"></i>
-            </a>
-            </li>
-            <li>
-            <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-              <i class="ion-social-googleplus"></i>
-            </a>
-            </li>
           </ul>
         </div>
       </div>

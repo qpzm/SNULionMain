@@ -1,6 +1,5 @@
 class MoneyController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :authenticate_admin!
+  before_action :authenticate_any!
     def money_check
     end
 end

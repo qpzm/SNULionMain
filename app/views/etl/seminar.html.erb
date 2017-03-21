@@ -1,0 +1,67 @@
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<div id="google_translate_element"></div><script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<!--
+==================================================
+Portfolio Section Start
+================================================== -->
+<section id="works" class="works">
+  <div class="container">
+    <div class="section-heading">
+      <h1 class="title wow fadeInDown" data-wow-delay=".3s">Seminar</h1>
+      <p class="wow fadeInDown" data-wow-delay=".5s">
+      </p>
+    </div>
+    <div class="row">
+      <% @seminars.each do |i| %>
+        <div class="col-sm-4 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper text-center">
+              <%= image_tag "#{i[:file]}", class: "img-responsive", alt: "" %>
+              <div class="overlay">
+                <div class="buttons">
+                  <a rel="gallery" class="fancybox"><%= i[:title] %></a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <h4>
+                <%= i[:title] %>
+              </h4>
+              <p>
+                <%= i[:content] %>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section> <!-- #works -->
+<!--
+==================================================
+Portfolio Section Start
+================================================== -->
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">궁금한 점이 있나요?</h1>
+          <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">멋쟁이 사자처럼 at SNU 페이스북 페이지에 메시지를 남겨주세요.</p>
+          <a href="https://www.facebook.com/likelionatSNU/" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Leave a Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

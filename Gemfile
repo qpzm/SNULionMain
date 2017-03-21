@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'figaro'
 gem 'carrierwave'
 gem 'fog'
 gem 'rails_admin'

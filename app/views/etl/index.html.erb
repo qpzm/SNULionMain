@@ -18,28 +18,30 @@ Portfolio Section Start
 <section id="works" class="works">
   <div class="container">
     <div class="section-heading">
-      <h1 class="title wow fadeInDown" data-wow-delay=".3s">HomeWorks</h1>
+      <h1 class="title wow fadeInDown" data-wow-delay=".3s">ETL</h1>
       <p class="wow fadeInDown" data-wow-delay=".5s">
       </p>
     </div>
     <div class="row">
-      <% @homeworks.each do |i| %>
-        <div class="col-sm-4 col-xs-12">
+      <% @weeks.each do |i| %>
+        <div class="col-sm-12 col-xs-12">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
             <div class="img-wrapper text-center">
               <%= image_tag "#{i[:file]}", class: "img-responsive", alt: "" %>
               <div class="overlay">
                 <div class="buttons">
-                  <a rel="gallery" class="fancybox"><%= i[:title] %></a>
+                  <a rel="gallery" class="fancybox"><%= i[:start_date].month %> / <%= i[:start_date].day %> ~ 
+						    <%= i[:end_date].month %> / <%= i[:end_date].day %>
+													</a>
                 </div>
               </div>
             </div>
             <figcaption>
               <h4>
-                <%= i[:title] %>
+                <%= i[:start_date] %>
               </h4>
               <p>
-                <%= i[:content] %>
+                <%= i[:end_date] %>
               </p>
             </figcaption>
           </figure>

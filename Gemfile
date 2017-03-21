@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'seed_dumper'
 gem 'carrierwave'
 gem 'fog'
 gem 'rails_admin'

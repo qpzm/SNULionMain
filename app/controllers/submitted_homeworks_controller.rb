@@ -1,0 +1,2 @@
+class SubmittedHomeworksController < ApplicationController
+end

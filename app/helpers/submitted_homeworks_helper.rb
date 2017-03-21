@@ -1,0 +1,2 @@
+module SubmittedHomeworksHelper
+end

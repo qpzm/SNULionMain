@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   get 'money/money_check'
 
+  get '/etl' => 'etl#index'
+  get '/homework' => 'etl#homework'
+  get '/seminar' => 'etl#seminar'
+
   devise_for :users
   devise_for :admins
 

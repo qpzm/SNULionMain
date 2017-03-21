@@ -1,0 +1,30 @@
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<%= form_for @sHomework, html: { multipart: true }, url: submitted_homeworks_path(@sHomework) do |f| %>
+  <% if @sHomework.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sHomework.errors.count, "error") %> prohibited this pet from being saved:</h2>
+ 
+      <ul>
+      <% @sHomework.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+<br><br><br>
+<br><br><br>
+  <div class="field">
+    <%= f.label :img %><br>
+    <%= f.file_field :img %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

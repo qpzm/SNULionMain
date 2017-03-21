@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/gallery' => 'home#gallery'
   get '/contact' => 'home#contact'
   get 'money/money_check'
-  get 'lecture/lecture'
 
   devise_for :users
   devise_for :admins

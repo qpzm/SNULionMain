@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/snulion', as: 'rails_admin'
   root 'home#index'
   get '/member' => 'home#member'
   get '/gallery' => 'home#gallery'

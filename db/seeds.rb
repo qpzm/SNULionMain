@@ -9,8 +9,6 @@ require "date"
 
 Admin.create(email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
 
-
-
 # Week Seed !!
 start_date = DateTime.new(2017,3,19)
 for i in 1..16
@@ -21,6 +19,13 @@ end
 # example User seed !!
 User.create(email: "test@test.com", password: "123412", password_confirmation: "123412")
 User.create(email: "test1@test.com", password: "123412", password_confirmation: "123412")
+
+# 1st week Seminar seed
+Seminar.create(week_id: "1", title: "웹의 기초", document: "http://naver.com")
+
+# 1st week Homework seed
+Homework.create(week_id: "1", title: "Codecademy HTML CSS part 1")
+Homework.create(week_id: "1", title: "멋사4기 1주차 강의")
 
 
 

@@ -1,180 +1,83 @@
-<!--
-==================================================
-Slider Section Start
-================================================== -->
-<div id="google_translate_element"></div><script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!--
-==================================================
-Slider Section Start
-================================================== -->
-<!--
-==================================================
-Portfolio Section Start
-================================================== -->
-<section id="works" class="works">
+<%= render partial: 'home/global', locals: {section: "ETL"} %>
+
+<section id="weeks" class="weeks">
   <div class="container">
-    <div class="section-heading">
-      <h1 class="title wow fadeInDown" data-wow-delay=".3s">ETL</h1>
-      <p class="wow fadeInDown" data-wow-delay=".5s">
-      </p>
+
+    <div class="row current_week">
+      <h3>Current Week</h3>
+      <div class="col-sm-12 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+        <figcaption>
+        <div class="buttons">
+          <h4>
+            <a rel="gallery" class="fancybox"><%= @current_week[:start_date].month %> / <%= @current_week[:start_date].day %> ~ 
+              <%= @current_week[:end_date].month %> / <%= @current_week[:end_date].day %>
+            </a>
+          </h4>
+        </div>
+        <hr>
+        <% if !@current_week.seminars.nil? %>
+          <div class="seminar">
+            <% @current_week.seminars.all.each do |s| %>
+              <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+              <a href= "<%= s.document %>">세미나: <%= s.title %></a>
+            <% end %>
+          </div>
+        <% end %>
+        <% if !@current_week.homeworks.nil? %>
+          <div class="seminar">
+            <% @current_week.homeworks.all.each do |h| %>
+              <div class = "submit_homework">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                <%= h.title %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        </figcaption>
+        </figure>
+      </div>
     </div>
+
     <div class="row">
+      <h3>All Weeks</h3>
       <% @weeks.each do |i| %>
         <div class="col-sm-12 col-xs-12">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper text-center">
-              <%= image_tag "#{i[:file]}", class: "img-responsive", alt: "" %>
-              <div class="overlay">
-                <div class="buttons">
-                  <a rel="gallery" class="fancybox"><%= i[:start_date].month %> / <%= i[:start_date].day %> ~ 
-						    <%= i[:end_date].month %> / <%= i[:end_date].day %>
-													</a>
-                </div>
-              </div>
+          <figcaption>
+          <div class="buttons">
+            <h4>
+              <a rel="gallery" class="fancybox"><%= i[:start_date].month %> / <%= i[:start_date].day %> ~ 
+                <%= i[:end_date].month %> / <%= i[:end_date].day %>
+              </a>
+            </h4>
+          </div>
+          <hr>
+          <% if !i.seminars.nil? %>
+            <div class="seminar">
+              <% i.seminars.all.each do |s| %>
+                <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+                <a href= "<%= s.document %>">세미나: <%= s.title %></a>
+              <% end %>
             </div>
-            <figcaption>
-              <h4>
-                <%= i[:start_date] %>
-              </h4>
-              <p>
-                <%= i[:end_date] %>
-              </p>
-            </figcaption>
+          <% end %>
+          <% if !i.homeworks.nil? %>
+            <div class="seminar">
+              <% i.homeworks.all.each do |h| %>
+                <div class = "submit_homework">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  <%= h.title %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          </figcaption>
           </figure>
         </div>
       <% end %>
     </div>
   </div>
-</section> <!-- #works -->
-<!--
-==================================================
-Portfolio Section Start
-================================================== -->
-<section id="feature">
-    <div class="container">
-        <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">당신이 스누라이언과 함께한다는 것은</h1>
-            <p class="wow fadeInDown" data-wow-delay=".5s">
-                하고싶은 것도 배울 것도 많은 당신.<br> 그런 당신에게 스누라이언을 추천하는 <b>6가지 강력한 이유</b>
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-flask-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">웹 프로그래밍</h4>
-                          <p>스누라이언에서는 웹 서비스의 얼굴인<br>
-                            Front-End(HTML/CSS, js)와<br>
-                            뼈대인 Back-End(RoR)를 <br>
-                            다루는 법을 배웁니다.
-                          </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">생각을 현실로 만드는 기술</h4>
-                        <p>당신이 여태까지 생각만했던 그 아이디어.<br>
-                          그 아이디어를 현실로 만드는 과정과<br>
-                          그 결과물을 볼 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">벤처 생태계의 일원으로 살아가기</h4>
-                        <p>창업, 벤처, 스타트업.<br>
-                          익숙하게 들어왔지만 무엇인지는 잘 모르겠는 그 단어들.
-                          스누라이언과 함께라면 직접 그 생태계의 일원이 될 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-americanfootball-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">누구보다 빠르게 <br>새로운 기술 익히기</h4>
-                        <p>기본적인 교육과정인 Ruby on Rails를<br>
-                          비롯해서 AWS 등 실질적인 웹개발환경세팅,
-                          React.js, Angular.js, Ionic까지.<br>
-                          멋사를 통해 High-end Tech를 익힐 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-keypad-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">어디서도 구할 수 없는<br>독특한 네트워크</h4>
-                        <p>"생각을 현실로 만들자"는 모토아래<br>
-                          다양한 전공과 배경을 가지고 모인 사람들.<br>
-                          스누라이언과 함께라면 어디서도 찾을 수 없는 독특한 네트워크를 얻을 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1800ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-barcode-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">다양한 스타트업과의 연계</h4>
-                        <p>Google Campus, Amazon 등
-                          세계적인 IT기업부터 다양한 스타트업에 이르기까지
-                          스누라이언과 함께라면 그들과 만날 기회를 잡을 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> <!-- /#feature -->
 
-<section id="call-to-action">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">궁금한 점이 있나요?</h1>
-          <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">멋쟁이 사자처럼 at SNU 페이스북 페이지에 메시지를 남겨주세요.</p>
-          <a href="https://www.facebook.com/likelionatSNU/" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Leave a Message</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</section> <!-- #weeks-->
+

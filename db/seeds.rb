@@ -5,5 +5,22 @@
 #
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
+require "date"
 
 Admin.create(email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
+
+
+
+# Week Seed !!
+start_date = DateTime.new(2017,3,19)
+for i in 1..16
+  Week.create(start_date: start_date, end_date: start_date + 6.days)
+  start_date += 7.days
+end
+
+# example User seed !!
+User.create(email: "test@test.com", password: "123412", password_confirmation: "123412")
+User.create(email: "test1@test.com", password: "123412", password_confirmation: "123412")
+
+
+

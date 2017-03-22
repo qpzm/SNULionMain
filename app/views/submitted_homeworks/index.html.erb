@@ -1,0 +1,44 @@
+<%= render partial: 'home/global', locals: {section: "#{@homework.title} 제출된 숙제들"} %>
+<section id="submitted_homeworks" class="submitted_homeworks">
+  <div class="container">
+    <div class="row">
+      <h3><%= @homework.title %></h3>
+      <% @sHomeworks.each do |sh| %>
+        <div class="col-sm-12 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+          <figcaption>
+          <div class="buttons">
+            <h4>
+              <a rel="gallery" class="fancybox"><%= sh.updated_at %>
+              </a>
+            </h4>
+          </div>
+          <hr>
+          <% if !i.seminars.nil? %>
+            <div class="seminar">
+              <% i.seminars.all.each do |s| %>
+                <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+                <a href="<%= s.document %>">세미나: <%= s.title %></a>
+              <% end %>
+            </div>
+          <% end %>
+          <% if !i.homeworks.nil? %>
+            <div class="seminar">
+              <% i.homeworks.all.each do |h| %>
+                <div class = "submit_homework">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  <a href="<%= new_homework_submitted_homework_path(h.id) %>"><%= h.title %></a>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          </figcaption>
+          </figure>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</section> <!-- #weeks-->
+

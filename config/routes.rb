@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :submitted_homeworks
   mount RailsAdmin::Engine => '/snulion', as: 'rails_admin'
   root 'home#index'
   get '/member' => 'home#member'
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
   get '/etl' => 'etl#index'
   get '/homework' => 'etl#homework'
   get '/seminar' => 'etl#seminar'
+
+  resources :homeworks do
+    resources :submitted_homeworks, shallow: true
+  end
 
   devise_for :users
   devise_for :admins

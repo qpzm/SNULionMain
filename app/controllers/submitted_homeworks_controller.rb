@@ -27,6 +27,12 @@ class SubmittedHomeworksController < ApplicationController
     puts @sHomeworks.inspect
   end
 
+  def destroy
+    @sHomework = SubmittedHomework.find(params[:id])
+    @sHomework.destroy
+    redirect_to etl_path
+  end
+
   private
     def sHomework_params
       params.require(:submitted_homework).permit(:title, :img)

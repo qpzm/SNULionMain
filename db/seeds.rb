@@ -17,8 +17,7 @@ for i in 1..16
 end
 
 # example User seed !!
-User.create(name: "테스트1", email: "test@test.com", password: "123412", password_confirmation: "123412")
-User.create(name: "테스트2", email: "test1@test.com", password: "123412", password_confirmation: "123412")
+User.create(name: "운영진", email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
 
 # 1st week Seminar seed
 Seminar.create(week_id: "1", title: "웹의 기초", document: "http://naver.com")

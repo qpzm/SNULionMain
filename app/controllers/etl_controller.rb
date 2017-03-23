@@ -1,4 +1,6 @@
 class EtlController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @weeks = Week.all
     @current_week = Week.current_week

@@ -1,5 +1,5 @@
 class HomeworksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_any!
 
   def index
   end

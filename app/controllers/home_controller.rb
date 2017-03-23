@@ -1,14 +1,14 @@
 class HomeController < ApplicationController
   def index
-    @index = [{file: "젬.png", title: "젬", content: "예측시장서비스"},
-              {file: "샤샤건건.png", title: "샤샤건건", content: "교내 포스터 갤러리"},
-              {file: "모트모트.png", title: "모트모트", content: "노트에 감성을 더하다."},
-              {file: "운수좋은날.png", title: "운수좋은날", content: "운수 매칭 플랫폼"},
-              {file: "세렝게티.png", title: "세렝게티", content: "개발자 커뮤니티"},
-              {file: "피코.png", title: "피코", content: "위치기반 SNS"},
-              {file: "태그솔루션.png", title: "태그솔루션", content: "Transparent LET film"},
-              {file: "댄스팟.png", title: "댄스팟", content: "당신이 춤을 추고 싶다면"},
-              {file: "노티북.png", title: "노티북", content: "공지를 놓치면 손해"}]
+    @index = [{file: "젬.png", title: "젬", content: "예측시장서비스", domain: "http://jemjem.xyz"},
+              {file: "샤샤건건.png", title: "샤샤건건", content: "교내 포스터 갤러리", domain: "http://shashagungun.com"},
+              {file: "모트모트.png", title: "모트모트", content: "노트에 감성을 더하다.", domain: "http://motemote.kr"},
+              {file: "운수좋은날.png", title: "운수좋은날", content: "운수 매칭 플랫폼", domain: ""},
+              {file: "세렝게티.png", title: "세렝게티", content: "개발자 커뮤니티", domain: ""},
+              {file: "피코.png", title: "피코", content: "위치기반 SNS", domain: ""},
+              {file: "태그솔루션.png", title: "태그솔루션", content: "Transparent LET film", domain: "http://tagsolution.kr"},
+              {file: "댄스팟.png", title: "댄스팟", content: "당신이 춤을 추고 싶다면", domain: ""},
+              {file: "노티북.png", title: "노티북", content: "공지를 놓치면 손해", domain: ""}]
   end
 
   def member

@@ -13,10 +13,21 @@
               <% end %>
             </div>
             <figcaption>
-              <h4>
-                <%= i[:title] %>
-              </h4>
-            </figcaption>
+            <h3>
+              <%= User.find(i.user_id).name %>
+            </h3>
+            <h4>
+              </br>
+              <%= i[:title] %>
+              <% if current_user.id == i.user_id %>
+                <div class= "edit-tool">
+                  <%= link_to submitted_homework_path(i.id), method: "delete" do %>
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  <% end %>
+                </div>
+              <% end %>
+            </h4>
+              </figcaption>
           </figure>
         </div>
       <% end %>

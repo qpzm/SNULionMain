@@ -1,4 +1,5 @@
 class SubmittedHomeworksController < ApplicationController
+  before_action :authenticate_user!
   def new
     @sHomework = SubmittedHomework.new(homework: Homework.find(params[:homework_id]))
   end

@@ -17,7 +17,7 @@ class SubmittedHomeworksController < ApplicationController
       else
         puts @sHomework.errors.inspect
       end
-      redirect_back(fallback_location: :root)
+      redirect_to homework_path(params[:homework_id])
     end
   end
 

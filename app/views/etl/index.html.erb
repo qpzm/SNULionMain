@@ -29,7 +29,11 @@
             <% @current_week.homeworks.all.each do |h| %>
               <div class = "submit_homework">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                <a href="<%= new_homework_submitted_homework_path(h.id) %>"><%= h.title %></a>
+                <% if SubmittedHomework.where(user_id: current_user, homework_id: h.id).take.nil? %>
+                  <a href="<%= new_homework_submitted_homework_path(h.id) %>"><%= h.title %> [제출안됨]</a>
+                <% else %>
+                  <a href="<%= homework_path(h.id) %>"><%= h.title %> [제출완료]</a>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -66,7 +70,11 @@
               <% i.homeworks.all.each do |h| %>
                 <div class = "submit_homework">
                   <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                  <a href="<%= new_homework_submitted_homework_path(h.id) %>"><%= h.title %></a>
+                  <% if SubmittedHomework.where(user_id: current_user, homework_id: h.id).take.nil? %>
+                    <a href="<%= new_homework_submitted_homework_path(h.id) %>"><%= h.title %> [제출안됨]</a>
+                  <% else %>
+                    <a href="<%= homework_path(h.id) %>"><%= h.title %> [제출완료]</a>
+                  <% end %>
                 </div>
               <% end %>
             </div>

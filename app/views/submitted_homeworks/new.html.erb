@@ -1,28 +1,23 @@
 <%= render partial: 'home/global', locals: {section: "#{@sHomework.homework.title} 제출"} %>
-  <br><br><br><%# 동욱이형 이 br좀 나중에 없애주세요 저는 css하기 싫어서 %>
-<%= form_for [@sHomework.homework, @sHomework], html: { multipart: true } do |f| %>
-  <% if @sHomework.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sHomework.errors.count, "error") %> prohibited this pet from being saved:</h2>
- 
-      <ul>
-      <% @sHomework.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+<div class="submitted-homework-section"> 
+  <%= form_for [@sHomework.homework, @sHomework], html: { multipart: true } do |f| %>
+    <% if @sHomework.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@sHomework.errors.count, "error") %> prohibited this pet from being saved:</h2>
+        <ul>
+          <% @sHomework.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="title-field">
+      <%= f.text_field :title, size:48, placeholder: "간단한 과제 설명" %>
+    </div>
+    <div class="field">
+      <%= f.file_field :img %>
+      <%= f.submit "제출하기", class: "btn btn-primary"%>
     </div>
   <% end %>
- 
-  <div class="field">
-    <%= f.label :title, "내 숙제의 제목" %><br>
-    <%= f.text_field :title %>
-  </div>
-  <br><br><br><%# 동욱이형 이 br좀 나중에 없애주세요 저는 css하기 싫어서 %>
-  <div class="field">
-    <%= f.label :img, "인증샷" %><br>
-    <%= f.file_field :img %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

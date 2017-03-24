@@ -22,6 +22,26 @@ class SubmittedHomeworksController < ApplicationController
     end
   end
 
+  def edit
+    @sHomework = SubmittedHomework.find(params[:id])
+  end
+
+  def update
+    @sHomework = SubmittedHomework.find(params[:id])
+    homework = @sHomework.homework
+
+    respond_to do |format|
+      if @sHomework.update(sHomework_params)
+        flash[:notice] = 'ModelClassName was successfully updated.'
+        format.html { redirect_to homework_path(homework)}
+        format.xml  { head :ok }
+      else
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @sHomework.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def index
     @homework = Homework.find(params[:homework_id])
     @sHomeworks = @homework.submitted_homeworks
@@ -35,7 +55,8 @@ class SubmittedHomeworksController < ApplicationController
   end
 
   private
-    def sHomework_params
-      params.require(:submitted_homework).permit(:title, :img)
-    end
+
+  def sHomework_params
+    params.require(:submitted_homework).permit(:title, :img)
+  end
 end

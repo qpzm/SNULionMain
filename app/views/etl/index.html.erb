@@ -35,6 +35,9 @@
                   <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                   <a href="<%= homework_path(h.id) %>"><%= h.title %> [제출완료]</a>
                 <% end %>
+                <% if admin_signed_in? %>
+                  <a href="<%= homework_path(h.id) %>">[과제 훔쳐보기]</a>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -76,6 +79,9 @@
                   <% else %>
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                     <a href="<%= homework_path(h.id) %>"><%= h.title %> [제출완료]</a>
+                  <% end %>
+                  <% if admin_signed_in? %>
+                    <a href="<%= homework_path(h.id) %>">[과제 훔쳐보기]</a>
                   <% end %>
                 </div>
               <% end %>

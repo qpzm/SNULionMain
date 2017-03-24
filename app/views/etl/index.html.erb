@@ -39,6 +39,16 @@
                   <a href="<%= homework_path(h.id) %>"><b>[과제 훔쳐보기]</b> ( <%= h.submitted_homeworks.count %> 명 제출 )</a>
                 <% end %>
               </div>
+              <% if admin_signed_in? %>
+                <% if h.submitted_homeworks.count > 0 %>
+                  <div>
+                    &nbsp;&nbsp;
+                    <% h.submitted_homeworks.each do |s| %>
+                      &nbsp; <span><%= s.user.name %></span>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
             <% end %>
           </div>
         <% end %>
@@ -84,6 +94,16 @@
                     <a href="<%= homework_path(h.id) %>"><b>[과제 훔쳐보기]</b> ( <%= h.submitted_homeworks.count %> 명 제출 )</a>
                   <% end %>
                 </div>
+                <% if admin_signed_in? %>
+                  <% if h.submitted_homeworks.count > 0 %>
+                    <div>
+                      &nbsp;&nbsp;
+                      <% h.submitted_homeworks.each do |s| %>
+                        &nbsp; <span><%= s.user.name %></span>
+                      <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
               <% end %>
             </div>
           <% end %>

@@ -18,7 +18,15 @@
         </h3>
         <h4>
           <%= i[:title] %>
-          <% if current_user.id == i.user_id %>
+          <% if user_signed_in? %>
+            <% if current_user.id == i.user_id %>
+              <div class= "edit-tool">
+                <%= link_to submitted_homework_path(i.id), method: "delete", data: {confirm: "정말 삭제하나요?"} do %>
+                  [삭제]
+                <% end %>
+              </div>
+            <% end %>
+          <% elsif admin_signed_in? %>
             <div class= "edit-tool">
               <%= link_to submitted_homework_path(i.id), method: "delete", data: {confirm: "정말 삭제하나요?"} do %>
                 [삭제]

@@ -1,7 +1,6 @@
 // Place all the styles related to the homework controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 h3.user-name {
   margin-top: 0;
 }
@@ -11,4 +10,7 @@ div.edit-tool {
 
 html {
   overflow-x:hidden
+}
+figure.homework-figure {
+  height: 333px;
 }

@@ -322,7 +322,7 @@ figure:hover img {
 figure:hover .overlay {
   opacity: 1;
 }
-figure:hover .overlay .buttons a {
+figure:hover .overlay .buttons .fancybox {
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
@@ -339,7 +339,7 @@ figure .overlay {
   -webkit-transition: opacity 400ms;
   transition: opacity 400ms;
 }
-figure .overlay a {
+figure .overlay .fancybox {
   display: inline-block;
   color: #fff;
   padding: 10px 23px;
@@ -352,10 +352,10 @@ figure .overlay a {
   -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-figure .overlay a:hover {
+figure .overlay .fancybox:hover {
   text-decoration: none;
 }
-figure .overlay:hover a {
+figure .overlay:hover .fancybox {
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
@@ -371,9 +371,6 @@ figure figcaption {
 }
 figure figcaption h4 {
   margin: 0;
-}
-figure figcaption h4 a {
-  color: $first_color;
 }
 figure figcaption p {
   font-size: 14px;
@@ -1094,3 +1091,21 @@ article {
   padding-top: 20rem;
   min-height: 65rem;
 }
+.submitted-homework-section {
+  text-align: center;
+  padding-top: 20rem;
+  min-height: 65rem;
+
+  input {
+    display:inline-block;
+  }
+}
+.title-field input {
+  margin-bottom:1rem;
+}
+div.edit-tool {
+  display: inline-block;
+  position: absolute;
+  right: 2.5rem;
+}
+

@@ -1,7 +1,7 @@
 <%= render partial: 'home/global', locals: {section: "#{@sHomework.homework.title} 제출"} %>
 
 <div class="submitted-homework-section"> 
-  <%= form_for [@sHomework.homework, @sHomework], html: { multipart: true } do |f| %>
+  <%= form_for [@sHomework], html: { multipart: true } do |f| %>
     <% if @sHomework.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@sHomework.errors.count, "error") %> prohibited this pet from being saved:</h2>
@@ -16,7 +16,7 @@
       <%= f.text_field :title, size:48, placeholder: "간단한 과제 설명" %>
     </div>
     <div class="field">
-      <%= f.file_field :img %>
+      <%= f.file_field :img, value: "#{@sHomework.img.to_s.split("/").last}" %>
       <%= f.submit "제출하기", class: "btn btn-primary"%>
     </div>
   <% end %>

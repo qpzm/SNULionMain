@@ -1,19 +1,37 @@
 class SubmittedHomeworksController < ApplicationController
+  before_action :authenticate_user!
   def new
-    @sHomework = SubmittedHomework.new
+    @sHomework = SubmittedHomework.new(homework: Homework.find(params[:homework_id]))
   end
 
   def create
-    u = UploaderUploader.new
-    @sHomework = SubmittedHomework.new(sHomework_params)
-    if @sHomework.save
-      puts "11111"
-      u.store!(@sHomework[:img])
+    if !current_admin.nil?
+      puts "asdf"
+      redirect_to etl_path
     else
-      puts "22222"
-      puts @sHomework.errors.inspect
+      u = UploaderUploader.new
+      @sHomework = SubmittedHomework.new(sHomework_params)
+      @sHomework.homework_id = params[:homework_id]
+      @sHomework.user_id = current_user.id
+      if @sHomework.save
+        u.store!(@sHomework[:img])
+      else
+        puts @sHomework.errors.inspect
+      end
+      redirect_to homework_path(params[:homework_id])
     end
-    redirect_back(fallback_location: :root)
+  end
+
+  def index
+    @homework = Homework.find(params[:homework_id])
+    @sHomeworks = @homework.submitted_homeworks
+    puts @sHomeworks.inspect
+  end
+
+  def destroy
+    @sHomework = SubmittedHomework.find(params[:id])
+    @sHomework.destroy
+    redirect_to etl_path
   end
 
   private

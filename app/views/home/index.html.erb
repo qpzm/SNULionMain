@@ -77,24 +77,47 @@ Portfolio Section Start
     <div class="row">
       <% @index.each do |i| %>
         <div class="col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+          <% if i[:domain] == "#" %>
+            <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
             <div class="img-wrapper text-center">
               <%= image_tag "#{i[:file]}", class: "img-responsive", alt: "this is a title" %>
               <div class="overlay">
                 <div class="buttons">
-                  <a rel="gallery" class="fancybox"><%= i[:title] %></a>
+                  <span rel="gallery" class="fancybox"><%= i[:title] %></span>
                 </div>
               </div>
             </div>
             <figcaption>
+            <h4>
+              <%= i[:title] %>
+            </h4>
+            <p>
+            <%= i[:content] %>
+            </p>
+            </figcaption>
+            </figure>
+          <% else %>
+            <a href="<%= i[:domain] %>" style="display: block" target="_blank">
+              <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+              <div class="img-wrapper text-center">
+                <%= image_tag "#{i[:file]}", class: "img-responsive", alt: "this is a title" %>
+                <div class="overlay">
+                  <div class="buttons">
+                    <span rel="gallery" class="fancybox"><%= i[:title] %></span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
               <h4>
                 <%= i[:title] %>
               </h4>
               <p>
-                <%= i[:content] %>
+              <%= i[:content] %>
               </p>
-            </figcaption>
-          </figure>
+              </figcaption>
+              </figure>
+            </a>
+          <%  end %>
         </div>
       <% end %>
     </div>

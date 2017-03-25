@@ -18,6 +18,8 @@ end
 
 # example User seed !!
 User.create(name: "운영진", email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
+User.create(name: "태완", email: "snu1@likelion.org", password: "snulion2016", password_confirmation: "snulion2016")
+
 
 # 1st week Seminar seed
 Seminar.create(week_id: "1", title: "웹의 기초", document: "http://naver.com")

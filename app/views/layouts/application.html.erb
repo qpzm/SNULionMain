@@ -51,6 +51,7 @@
             <% if user_signed_in? or admin_signed_in? %>
               <li><a href="/money/money_check">Money</a></li>
               <li><a href="/etl">ETL</a></li>
+              <li><a href="/attendance">Attendance</a></li>
             <% end %>
             <% if user_signed_in? %>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

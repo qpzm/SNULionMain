@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/snulion', as: 'rails_admin'
   root 'home#index'
   get '/member' => 'home#member'
+  get '/attendance' => 'attendance#attendance_record'
   get '/gallery' => 'home#gallery'
   get '/contact' => 'home#contact'
   get 'money/money_check'

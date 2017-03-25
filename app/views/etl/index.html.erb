@@ -46,6 +46,19 @@
                     <% h.submitted_homeworks.each do |s| %>
                       &nbsp; <span><%= s.user.name %></span>
                     <% end %>
+
+		    <% User.all.each do |u| %>
+			<% @flag = 0 %>
+			<% h.submitted_homeworks.each do |s| %>
+			  <% if u.name == s.user.name %>
+			    <% @flag = 1 %>
+			  <% end %>
+			<% end %>
+			<% if @flag == 0 && u.name!="운영진" %>
+			    &nbsp; <span style="color:red"><%= u.name %></span>
+			<% end %>
+		    <% end %>
+
                   </div>
                 <% end %>
               <% end %>
@@ -99,12 +112,23 @@
                     <div>
                       &nbsp;&nbsp;
                       <% h.submitted_homeworks.each do |s| %>
-                        &nbsp; <span><%= s.user.name %></span>
-                      <% end %>
-                    </div>
-                  <% end %>
-                <% end %>
-              <% end %>
+			  &nbsp; <span><%= s.user.name %></span>
+		      <% end %>
+		      <% User.all.each do |u| %>
+			  <% @flag = 0 %>
+			  <% h.submitted_homeworks.each do |s| %>
+			      <% if u.name == s.user.name %>
+				  <% @flag = 1 %>
+			      <% end %>
+			  <% end %>
+			  <% if @flag == 0 && u.name != "운영진" %>
+			      &nbsp; <span style="color:red"><%= u.name %></span>
+			  <% end %>
+		      <% end %>
+		  </div>
+		  <% end %>
+	      <% end %>
+	  <% end %>
             </div>
           <% end %>
           </figcaption>

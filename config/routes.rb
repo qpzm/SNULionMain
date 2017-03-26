@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'money/money_check'
 
   get '/etl' => 'etl#index'
+  get 'etl/admin'
   get '/seminar' => 'etl#seminar'
 
   resources :homeworks do

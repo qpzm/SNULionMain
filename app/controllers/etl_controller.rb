@@ -10,5 +10,13 @@ class EtlController < ApplicationController
   def seminar
     @seminars = Seminar.all
   end
-
+  def admin
+    ## 운영자라면
+    if admin_signed_in?
+      @weeks = Week.all
+      @current_week = Week.current_week
+    else
+      redirect_to "/" 
+    end
+  end
 end

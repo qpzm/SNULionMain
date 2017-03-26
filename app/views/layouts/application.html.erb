@@ -48,20 +48,21 @@
             <li><a href="/" >Home</a></li>
             <li><a href="/member">Member</a></li>
             <li><a href="/gallery">Gallery</a></li>
-            <% if user_signed_in? or admin_signed_in? %>
-              <li><a href="/money/money_check">Money</a></li>
-              <li><a href="/etl">ETL</a></li>
-              <li><a href="/attendance">Attendance</a></li>
-            <% end %>
             <% if user_signed_in? %>
+              <li><%= link_to "MONEY", money_money_check_path %></li>
+              <li><%= link_to "ETL", etl_path %></li>
+              <li><%= link_to "ATTENDANCE", attendance_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <% elsif admin_signed_in? %>
+              <li><%= link_to "MONEY", money_money_check_path %></li>
+              <li><%= link_to "ETL_admin", etl_admin_path %></li>
+              <li><%= link_to "ATTENDANCE", attendance_path %></li>
               <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Login", new_user_session_path %></li>
             <% end %>
           </ul>
-        </div>
+          </div>
       </nav>
       <!-- /main nav -->
     </div>

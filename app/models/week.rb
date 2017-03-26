@@ -4,7 +4,7 @@ class Week < ApplicationRecord
 
   # output is current week 
   def self.current_week
-    today = DateTime.new(17,3,25)
+    today = DateTime.now
     #today = DateTime.now
     m_today = today.month
     d_today = today.day

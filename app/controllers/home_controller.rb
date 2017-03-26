@@ -25,7 +25,29 @@ class HomeController < ApplicationController
                 {name: "유진영", major: "경영학부"},
                 {name: "윤현영", major: "자유전공학부"},
                 {name: "이현민", major: "경제학부"},
-                {name: "임정건", major: "화학생물공학부"}]
+                {name: "임정건", major: "화학생물공학부"}
+                #{name: "고태건", major: "통계학과"},
+                #{name: "구자운", major: "체육교육과"},
+                #{name: "김연두", major: "종교학과"},
+                #{name: "김유경", major: "자유전공학부"},
+                #{name: "김은수", major: "경영학과"},
+                #{name: "김은총", major: "국어국문학과"},
+                #{name: "박성환", major: "기계항공공학부"},
+                #{name: "서재성", major: "심리학과"},
+                #{name: "손원희", major: "의류학과"},
+                #{name: "정정수", major: "체육교육과"},
+                #{name: "정현수", major: "심리학과"},
+                #{name: "정현우", major: "물리교육과"},
+                #{name: "조성래", major: "통계학과"},
+                #{name: "조현", major: "사회학과"},
+                #{name: "김승현", major: "경영학과"},
+                #{name: "노준현", major: "자유전공학부"},
+                #{name: "이문환", major: "서양화과"},
+                #{name: "이윤성", major: "전기정보공학부"},
+                #{name: "임비", major: "전기정보공학부"},
+                #{name: "임채민", major: "국어국문학과"},
+                #{name: "채경완", major: "지역시스템공학과"}
+                ]
   end
 
   def gallery

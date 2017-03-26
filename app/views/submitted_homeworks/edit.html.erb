@@ -1,23 +1,18 @@
 <%= render partial: 'home/global', locals: {section: "#{@sHomework.homework.title} 제출"} %>
 
-<div class="submitted-homework-section"> 
-  <%= form_for [@sHomework], html: { multipart: true } do |f| %>
-    <% if @sHomework.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@sHomework.errors.count, "error") %> prohibited this pet from being saved:</h2>
-        <ul>
-          <% @sHomework.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<div class="container">
+  <div class="submitted-homework-section">
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <% if @sHomework.img.url.nil? %>
+          <%= image_tag asset_path("default.png"), id: "preview-img", class: "preview-img" %>
+        <% else %>
+          <%= image_tag @sHomework.img.url, id: "preview-img", class: "preview-img" %>
+        <% end %>
       </div>
+    </div>
+    <%= form_for @sHomework, html: { multipart: true, class: "form-group" } do |f| %>
+      <%= render partial: 'form', locals: { sHomework: @sHomework, f: f } %>
     <% end %>
-    <div class="title-field">
-      <%= f.text_field :title, size:48, placeholder: "간단한 과제 설명" %>
-    </div>
-    <div class="field">
-      <%= f.file_field :img, value: "#{@sHomework.img.to_s.split("/").last}" %>
-      <%= f.submit "제출하기", class: "btn btn-primary"%>
-    </div>
-  <% end %>
+  </div>
 </div>

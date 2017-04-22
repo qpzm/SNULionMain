@@ -28,6 +28,9 @@ config/application.yml
 # Ignore application configuration
 /config/application.yml
 
+/public/assets
+/app/assets/stylesheets/ionicons.min.scss
+
 .DS_Store
 /.DS_Store
 app/assets/images/asdf.rb

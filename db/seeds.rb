@@ -7,7 +7,7 @@
 # Character.create(name: 'Luke', movie: movies.first)
 require "date"
 
-Admin.create(email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
+Admin.create(name: "진짜 운영진", email: "snu@likelion.org", password: "snulion2017", password_confirmation: "snulion2017")
 
 # Week Seed !!
 start_date = DateTime.new(2017,3,19)

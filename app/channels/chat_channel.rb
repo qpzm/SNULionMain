@@ -8,12 +8,13 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak (data)
-    ActionCable.server.broadcast('messages', message: render_message(data['message']))
+    m = Message.create(user_or_admin_id: current_user[:user]["id"], user_or_admin_type: current_user[:type], content: data['message'])
+    ActionCable.server.broadcast('messages', message: render_message(m))
   end
 
   private
 
     def render_message(message)
-      ApplicationController.render(partial: 'messages/message', locals: { message: message, username: user_name })
+      ApplicationController.render(partial: 'messages/message', locals: { m: message })
     end
 end

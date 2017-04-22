@@ -2,8 +2,10 @@
 <p style="margin-top: 10px">내 이름 : <%= cookies.signed[:name] %></p>
 
 <br/><br/>
-<br/><br/>
-<div id='messages'></div>
-<br/><br/>
+<div id='messages'>
+  <% @messagesToday.each do |m| %>
+    <p><b><%= m.user_or_admin.name %></b> : <%= m.content %> <span style="font-style: italic; font-size: 9px"><%= m.created_at %></span></p>
+  <% end %>
+</div>
 
 <%= text_field_tag :body, '', id: 'chat-speak' %>

@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :submitted_homeworks
+  has_many :messages, as: :user_or_admin
 end

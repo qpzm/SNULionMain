@@ -36,3 +36,4 @@ config/application.yml
 app/assets/images/asdf.rb
 
 *.swp
+dump.rdb

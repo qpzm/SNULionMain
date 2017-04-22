@@ -9,6 +9,7 @@ class Admins::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
+    cookies.signed[:name] = Admin.find_by(email: params[:admin][:email]).name
   end
 
   # DELETE /resource/sign_out

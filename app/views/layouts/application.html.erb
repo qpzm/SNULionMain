@@ -52,11 +52,13 @@
               <li><%= link_to "MONEY", money_money_check_path %></li>
               <li><%= link_to "ETL", etl_path %></li>
               <li><%= link_to "ATTENDANCE", attendance_path %></li>
+              <li><%= link_to "BOBCHAT", messages_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <% elsif admin_signed_in? %>
               <li><%= link_to "MONEY", money_money_check_path %></li>
               <li><%= link_to "ETL_admin", etl_admin_path %></li>
               <li><%= link_to "ATTENDANCE", attendance_path %></li>
+              <li><%= link_to "BOBCHAT", messages_path %></li>
               <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Login", new_user_session_path %></li>

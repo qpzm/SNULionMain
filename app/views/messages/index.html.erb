@@ -1,11 +1,12 @@
 <%= render partial: 'home/global', locals: {section: "발로 만든 채팅창"} %>
-<p style="margin-top: 10px">내 이름 : <%= cookies.signed[:user]["name"] %></p>
+<p style="margin: 10px 0">내 이름 : <%= cookies.signed[:user]["name"] %></p>
 
-<br/><br/>
 <div id='messages'>
   <% @messagesToday.each do |m| %>
     <%= ApplicationController.render(partial: 'messages/message', locals: { m: m }) %>
   <% end %>
 </div>
 
-<%= text_field_tag :body, '', id: 'chat-speak' %>
+<div id="chatbox">
+  <%= text_field_tag :body, '', id: 'chat-speak' %>
+</div>

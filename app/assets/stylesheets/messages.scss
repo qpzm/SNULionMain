@@ -11,7 +11,7 @@
     height: 500px;
     width: 1000px;
     border: 1px solid #ACD8F0;
-    overflow: auto;
+    overflow-y: auto;
     .message {
         width: 970px;
         word-break: break-all;
